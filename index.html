@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuMiau PetShop | Amor em Cada Patinha</title>
+  <meta name="description" content="PetShop com produtos e servicos para caes, gatos, aves e roedores. Compre online e simule seu pedido.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-shape bg-shape--one"></div>
+  <div class="bg-shape bg-shape--two"></div>
+
+  <header class="header">
+    <div class="logo-wrap">
+      <span class="logo-mark" aria-hidden="true">PET</span>
+      <h1>AuMiau PetShop</h1>
+    </div>
+    <nav class="nav">
+      <a href="#servicos">Servicos</a>
+      <a href="#produtos">Produtos</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+    <button id="open-cart" class="cart-button" aria-label="Abrir carrinho">
+      Carrinho <span id="cart-count">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="tag">Comercio eletronico para pets</p>
+        <h2>Cuidados e carinho para todos os tipos de animais domesticos</h2>
+        <p>
+          Produtos de qualidade, banho e tosa, veterinario, hotelzinho e muito mais.
+          Monte seu carrinho e simule sua compra em segundos.
+        </p>
+        <a href="#produtos" class="cta">Ver ofertas de hoje</a>
+      </div>
+      <div class="hero-media">
+        <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=80" alt="Cachorro e gato juntos com expressao feliz">
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="section-head">
+        <h3>Servicos em destaque</h3>
+        <p>Atendimento especializado para cada fase da vida do seu pet.</p>
+      </div>
+      <div id="service-grid" class="card-grid"></div>
+    </section>
+
+    <section id="produtos" class="section">
+      <div class="section-head">
+        <h3>Produtos para seu pet</h3>
+        <p>Escolha os itens e adicione no carrinho para simular seu pedido.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filtrar produtos por categoria">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="caes">Caes</button>
+        <button class="filter-btn" data-filter="gatos">Gatos</button>
+        <button class="filter-btn" data-filter="aves">Aves</button>
+        <button class="filter-btn" data-filter="roedores">Roedores</button>
+      </div>
+      <div id="product-grid" class="card-grid"></div>
+    </section>
+
+    <aside id="cart-panel" class="cart-panel" aria-hidden="true">
+      <div class="cart-panel-header">
+        <h4>Seu carrinho</h4>
+        <button id="close-cart" class="icon-btn" aria-label="Fechar carrinho">X</button>
+      </div>
+      <div id="cart-items" class="cart-items"></div>
+      <div class="cart-total">
+        <p>Total</p>
+        <strong id="cart-total">R$ 0,00</strong>
+      </div>
+      <a href="#checkout" id="go-checkout" class="cta cta-small">Ir para checkout</a>
+    </aside>
+
+    <section id="checkout" class="section checkout">
+      <div class="section-head">
+        <h3>Simular compra</h3>
+        <p>Preencha os dados para finalizar a simulacao do pedido.</p>
+      </div>
+
+      <form id="checkout-form" class="checkout-form">
+        <label>
+          Nome completo
+          <input type="text" id="nome" required placeholder="Digite seu nome">
+        </label>
+        <label>
+          E-mail
+          <input type="email" id="email" required placeholder="voce@email.com">
+        </label>
+        <label>
+          Endereco de entrega
+          <input type="text" id="endereco" required placeholder="Rua, numero e bairro">
+        </label>
+        <label>
+          Forma de pagamento
+          <select id="pagamento" required>
+            <option value="">Selecione</option>
+            <option>Cartao de credito</option>
+            <option>Pix</option>
+            <option>Boleto</option>
+          </select>
+        </label>
+        <button type="submit" class="cta">Finalizar simulacao</button>
+      </form>
+
+      <div id="order-result" class="order-result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>AuMiau PetShop - Site demonstrativo para simulacao de ecommerce pet.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
